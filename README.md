@@ -127,9 +127,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📧 Contact
 
-Your Name - [@yourusername](https://github.com/yourusername)
+Your Name - [@SHALINCODER](https://github.com/SHALINCODER)
 
-Project Link: [https://github.com/yourusername/jarvis](https://github.com/yourusername/jarvis)
+Project Link: [https://github.com/SHALINCODER/jarvis](https://github.com/SHALINCODER/jarvis)
 
 ---
 
