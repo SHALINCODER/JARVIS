@@ -1,0 +1,439 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   J.A.R.V.I.S. - $1 Million Dollar Futuristic Design System
+   Holographic AI Interface | Stark Industries Command Center
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ═══ Core Palette - Holographic Spectrum ═══ */
+  --holo-cyan: #00f0ff;
+  --holo-blue: #0080ff;
+  --holo-purple: #a855f7;
+  --holo-magenta: #ff00aa;
+  --holo-gold: #ffd700;
+  --holo-orange: #ff6b35;
+  --holo-green: #00ff88;
+  --holo-white: #ffffff;
+  
+  /* Primary Brand Colors */
+  --primary: #00f0ff;
+  --primary-dim: #0099aa;
+  --secondary: #a855f7;
+  --accent: #ff00aa;
+  --warning: #ffd700;
+  --success: #00ff88;
+  --danger: #ff3366;
+  
+  /* ═══ Glow Systems ═══ */
+  --glow-cyan: 
+    0 0 5px #00f0ff,
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff,
+    0 0 40px rgba(0, 240, 255, 0.5),
+    0 0 80px rgba(0, 240, 255, 0.3);
+  
+  --glow-purple:
+    0 0 5px #a855f7,
+    0 0 10px #a855f7,
+    0 0 20px #a855f7,
+    0 0 40px rgba(168, 85, 247, 0.5);
+  
+  --glow-gold:
+    0 0 5px #ffd700,
+    0 0 10px #ffd700,
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 40px rgba(255, 215, 0, 0.3);
+  
+  --glow-text: 
+    0 0 10px rgba(0, 240, 255, 0.8),
+    0 0 20px rgba(0, 240, 255, 0.4),
+    0 0 40px rgba(0, 240, 255, 0.2);
+  
+  /* ═══ Background Layers ═══ */
+  --bg-void: #000508;
+  --bg-deep: #000a0f;
+  --bg-surface: rgba(0, 20, 30, 0.85);
+  --bg-elevated: rgba(0, 40, 60, 0.6);
+  --bg-glass: rgba(0, 30, 50, 0.4);
+  --bg-panel: linear-gradient(135deg, rgba(0, 40, 60, 0.5) 0%, rgba(0, 20, 40, 0.8) 100%);
+  
+  /* ═══ Text System ═══ */
+  --text-primary: #ffffff;
+  --text-secondary: #88ccdd;
+  --text-muted: #446677;
+  --text-accent: #00f0ff;
+  --text-glow: #00f0ff;
+  
+  /* ═══ Border System ═══ */
+  --border-subtle: rgba(0, 240, 255, 0.1);
+  --border-glow: rgba(0, 240, 255, 0.4);
+  --border-active: rgba(0, 240, 255, 0.8);
+  --border-gold: rgba(255, 215, 0, 0.4);
+  
+  /* ═══ Typography ═══ */
+  --font-display: 'Syncopate', 'Orbitron', sans-serif;
+  --font-heading: 'Orbitron', sans-serif;
+  --font-ui: 'Exo 2', 'Rajdhani', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  
+  /* ═══ Timing Functions ═══ */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* ═══ Animation Durations ═══ */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 800ms;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Global Reset & Foundation
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-void);
+  
+  /* Deep Space Background */
+  background-image: 
+    /* Nebula clouds */
+    radial-gradient(ellipse at 10% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 0, 170, 0.03) 0%, transparent 60%),
+    /* Star field */
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.8) 0%, transparent 50%),
+    radial-gradient(1px 1px at 40px 70px, rgba(255, 255, 255, 0.5) 0%, transparent 50%),
+    radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+    radial-gradient(1px 1px at 130px 80px, rgba(0, 240, 255, 0.6) 0%, transparent 50%),
+    radial-gradient(1px 1px at 160px 120px, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+    /* Deep void */
+    linear-gradient(180deg, var(--bg-void) 0%, #000a12 50%, var(--bg-void) 100%);
+  background-size: 
+    100% 100%, 100% 100%, 100% 100%,
+    200px 200px, 200px 200px, 200px 200px,
+    200px 200px, 200px 200px, 200px 200px,
+    100% 100%;
+  background-attachment: fixed;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Holographic Overlay System
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Minimal scan lines - removed animations */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 2px,
+      rgba(0, 0, 0, 0.02) 4px
+    );
+  opacity: 0.3;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Selection & Focus States
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+::selection {
+  background: rgba(0, 240, 255, 0.3);
+  color: var(--text-primary);
+  text-shadow: var(--glow-text);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Scrollbar - Holographic Style
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 20, 30, 0.5);
+  border-left: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, 
+    rgba(0, 240, 255, 0.6) 0%,
+    rgba(0, 128, 255, 0.4) 50%,
+    rgba(168, 85, 247, 0.6) 100%
+  );
+  border-radius: 4px;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, 
+    rgba(0, 240, 255, 0.8) 0%,
+    rgba(0, 128, 255, 0.6) 50%,
+    rgba(168, 85, 247, 0.8) 100%
+  );
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Typography System
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out-expo);
+  position: relative;
+}
+
+a:hover {
+  color: var(--holo-white);
+  text-shadow: var(--glow-text);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+  transition: width var(--duration-normal) var(--ease-out-expo);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Button Base System
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+button {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: all var(--duration-normal) var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+button:not(:disabled):hover::before {
+  transform: translateX(100%);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  filter: grayscale(0.5);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Global Animation Keyframes
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.7;
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  75% {
+    transform: translateY(4px) rotate(-1deg);
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes holographic {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(15deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-2px, 1px);
+  }
+  40% {
+    transform: translate(2px, -1px);
+    opacity: 0.8;
+  }
+  60% {
+    transform: translate(-1px, 2px);
+  }
+  80% {
+    transform: translate(1px, -2px);
+    opacity: 0.9;
+  }
+}
+
+@keyframes border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes data-stream {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Utility Classes
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.glow-cyan { text-shadow: var(--glow-text); }
+.glow-gold { text-shadow: var(--glow-gold); }
+.glow-purple { text-shadow: var(--glow-purple); }
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--holo-cyan), var(--holo-purple), var(--holo-cyan));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holographic 4s ease infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Performance Optimizations
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  body::before,
+  body::after {
+    display: none;
+  }
+}
+
+/* GPU Acceleration */
+.gpu-accelerated {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

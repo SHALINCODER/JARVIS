@@ -1,0 +1,2 @@
+🎙️ AI-Powered Voice Assistant - Control your computer with voice commands. Built with React, TypeScript, and Web Speech API. Features AI conversations, voice-controlled app launching, and hands-free Voice Agent mode.
+
